@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "lib": ["es5","es6","es7","es2018","es2019","es2020","esnext", "dom", "ScriptHost", "dom.iterable"],
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "declaration": true,
+    "outDir": "./lib",
+    "strict": true,
+    "target": "es6",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "baseUrl": "./src",
+    "allowJs": true,
+    "paths": {
+      "@helpers": ["helpers"],
+      "@helpers/*": ["helpers/*"],
+      "project-npmPackageTypescript/helpers": ["helpers"],
+      "project-npmPackageTypescript/helpers/*": ["helpers/*"]
+    },
+    "allowSyntheticDefaultImports": true,
+    "types": ["node", "react"]
+  },
+  "include": ["./src/**/**/*"],
+  "exclude": ["node_modules", "**/__tests__/*"]
+}
