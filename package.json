@@ -2,10 +2,18 @@
   "name": "project-npmPackageTypescript",
   "version": "1.0.0",
   "description": "package npm typescript",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
@@ -18,5 +26,16 @@
     "url": "https://github.com/abrahamibo/project-npmPackageTypescript/issues"
   },
   "homepage": "https://github.com/abrahamibo/project-npmPackageTypescript#readme",
-
+  "devDependencies": {
+    "@types/jest": "^26.0.14",
+    "jest": "^26.5.3",
+    "prettier": "^2.1.2",
+    "ts-jest": "^26.4.1",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.0.3"
+  },
+  "files": [
+    "lib/**/*"
+  ]
 }
