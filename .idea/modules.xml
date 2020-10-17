@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../project-nextjs/.idea/project-nextjs.iml" filepath="$PROJECT_DIR$/../project-nextjs/.idea/project-nextjs.iml" />
       <module fileurl="file://$PROJECT_DIR$/../project-npmPackageTypescript/.idea/project-npmPackageTypescript.iml" filepath="$PROJECT_DIR$/../project-npmPackageTypescript/.idea/project-npmPackageTypescript.iml" />
     </modules>
   </component>
