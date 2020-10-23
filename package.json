@@ -2,11 +2,11 @@
   "name": "project-npmPackageTypescript",
   "version": "1.0.0",
   "description": "package npm typescript",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "jest": "jest --config jestconfig.json",
-    "build": "tsc -p .",
+    "build": "webpack",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
@@ -28,18 +28,28 @@
   },
   "homepage": "https://github.com/abrahamibo/project-npmPackageTypescript#readme",
   "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
     "@types/jest": "^26.0.14",
+    "@typescript-eslint/parser": "^4.4.1",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "clean-webpack-plugin": "^3.0.0",
     "jest": "^26.5.3",
     "prettier": "^2.1.2",
     "ts-jest": "^26.4.1",
+    "ts-loader": "^8.0.5",
     "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^4.0.3"
+    "typescript": "^4.0.3",
+    "webpack": "^5.1.3",
+    "webpack-cli": "^4.0.0"
   },
   "files": [
-    "lib/**/*"
+    "dist"
   ],
   "dependencies": {
+    "@babel/preset-react": "^7.12.1",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
     "react": "^16.14.0",
